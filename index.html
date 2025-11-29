@@ -183,10 +183,53 @@ body {
 .epic2007:nth-child(5) { transform:rotate(8deg); }
 </style>
 
+<!-- РАНДОМНЫЕ ЦИТАТЫ ДРУГ О ДРУГЕ -->
+<div style="margin:80px auto; max-width:800px; text-align:center;">
+  <h2 style="font-size:42px; color:#00ffff; text-shadow:0 0 15px #ff00ff; margin-bottom:30px;">
+    Мы о друг друге:
+  </h2>
+
+  <div id="quote" 
+       style="font-size:32px; 
+              min-height:120px; 
+              padding:30px; 
+              background:rgba(0,0,0,0.5); 
+              border:4px ridge #00ff00; 
+              border-radius:20px;
+              cursor:pointer;"
+       onclick="nextQuote()">
+    кликни или подожди...
+  </div>
+</div>
+
+<script>
+const quotes = [
+  "Без него я бы до сих пор думал, что пиво — это плохо",
+  "** = все. ведя ЖЕСТКО про **. ведя. Подписаться.",
+  "фо-фо ватафо шнеле",
+  "MR.V — это когда ты говоришь «поехали за шаурмой в 3 ночи», а он уже заводит тачку",
+  "MR.E — тот самый чел, который всегда отвечает «да пох газ» и идёт с тобой до конца",
+  "Если бы не он, я бы до сих пор носил чёлку на глаза и слушал Tokio Hotel",
+  "Один раз он проспал свой же день рождения. Я приехал в 12 дня — он ещё спал",
+  "Мы с ним не лучшие друзья. Мы просто не нашли никого лучше",
+  "Он должен мне 8400 рублей с 2016 года. Я напоминаю ему каждый год",
+  "Когда-нибудь мы купим дом рядом. Или хотя бы гаражи через дорогу"
+];
+
+let current = -1;
+
+function nextQuote() {
+  current = (current + 1) % quotes.length;
+  document.getElementById("quote").innerHTML = "❝ " + quotes[current] + " ❞";
+}
+
+// Автосмена каждые 8 секунд
+setInterval(nextQuote, 8000);
+
+// Первая цитата сразу при загрузке
+nextQuote();
+</script>
+
 
 </body>
-
 </html>
-
-
-
