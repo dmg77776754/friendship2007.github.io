@@ -467,7 +467,7 @@ async function ensureThree(){
   if(window.THREE) return;
   
   // Load three-loader script first
-  await loadScriptOnce('assets/js/three-loader.js');
+  await loadScriptOnce('three-loader.js');
   
   // Wait for the loader's promise to resolve
   if (window.threeLoaderPromise) {
@@ -485,7 +485,7 @@ async function ensureThree(){
   
   // Load OrbitControls (optional, but needed for 3D interaction)
   try {
-    await loadScriptOnce('assets/js/OrbitControls-loader.js');
+    await loadScriptOnce('OrbitControls-loader.js');
     if (window.OrbitControls) {
       // Attach to THREE for convenience
       THREE.OrbitControls = window.OrbitControls;
